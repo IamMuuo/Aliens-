@@ -10,6 +10,7 @@ Description: Contains the entry point to the game
 
 import sys
 import pygame
+import utils
 from settings import Settings
 from ship import Ship
 
@@ -18,7 +19,7 @@ def run_game():
 
     pygame.init()
     game_settings = Settings()
-    screen = pygame.display.set_mode((game_settings.screen_width,game_settings.screen_height))
+    screen = pygame.display.set_mode(game_settings.screen_dimensions)
     pygame.display.set_caption("Aliens!")
 
     # make a ship
@@ -27,18 +28,8 @@ def run_game():
     # start the main loop of the game
 
     while True:
-
-        # watch for keyboard and mouse events
-
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-
-        # Make the most recently drawn sceen available
-        screen.fill(game_settings.bg_color)
-        ship.blitme()
-
-        pygame.display.flip()
+        utils.check_events()
+        utils.update_screen(game_settings,screen,ship)
 
 if __name__ == '__main__':
     run_game()
