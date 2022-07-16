@@ -10,13 +10,14 @@ Description: Contains the entry point to the game
 
 import sys
 import pygame
+from settings import Settings
 
 def run_game():
     # Initialize game and create a screen object.
 
     pygame.init()
-
-    screen = pygame.display.set_mode((1200,800))
+    game_settings = Settings()
+    screen = pygame.display.set_mode((game_settings.screen_width,game_settings.screen_height))
     pygame.display.set_caption("Aliens!")
 
     # start the main loop of the game
@@ -30,6 +31,7 @@ def run_game():
                 sys.exit()
 
         # Make the most recently drawn sceen available
+        screen.fill(game_settings.bg_color)
         pygame.display.flip()
 
 if __name__ == '__main__':
