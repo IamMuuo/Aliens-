@@ -11,5 +11,5 @@ class Settings():
 
     def __init__(self):
         # Screen Settings
-        self.screen_dimensions = (1200,800)
+        self.screen_dimensions = (1280,720)
         self.bg_color = (230,230,230)   #RBG format

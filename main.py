@@ -28,7 +28,8 @@ def run_game():
     # start the main loop of the game
 
     while True:
-        utils.check_events()
+        utils.check_events(ship)
+        ship.update()
         utils.update_screen(game_settings,screen,ship)
 
 if __name__ == '__main__':
