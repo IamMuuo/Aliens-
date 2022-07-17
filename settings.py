@@ -13,3 +13,4 @@ class Settings():
         # Screen Settings
         self.screen_dimensions = (1280,720)
         self.bg_color = (230,230,230)   #RBG format
+        self.ship_speed_factor = 1.5

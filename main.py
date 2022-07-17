@@ -23,7 +23,7 @@ def run_game():
     pygame.display.set_caption("Aliens!")
 
     # make a ship
-    ship = Ship(screen)
+    ship = Ship(game_settings,screen)
 
     # start the main loop of the game
 
